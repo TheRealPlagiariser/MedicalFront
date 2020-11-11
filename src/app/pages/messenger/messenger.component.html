@@ -1,0 +1,51 @@
+<div class="main">
+  <div class="container">
+    <div class="row" style="text-align: center;">
+      <div class="col-12">
+        <div>
+          <h2
+            style="
+              color: rgb(37, 33, 33);
+              text-align: center;
+              font-weight: 500;
+            "
+          >
+            Collect Insurance Claims
+          </h2>
+        </div>
+        <div id="emp">
+          <form [formGroup]="messengerForm" ngNativeValidate (ngSubmit)="submit()">
+            <label style="margin-right: 10px;">Envelopes Submitted </label>
+            <input
+              class="mat-elevation-z2"
+              type="hidden"
+              formControlName="claims"
+            />
+            <input
+              class="mat-elevation-z2"
+              type="number"
+              formControlName="claims"
+              placeholder="Envelopes Submitted"
+              readonly
+            />
+            <br />
+            <label style="padding-right: 10px;">Envelope Collected </label>
+
+            <input
+              class="mat-elevation-z2"
+              type="number"
+              formControlName="received"
+              min="1"
+              placeholder="Envelope received "
+              required
+            />
+            <br />
+            <button mat-raised-button class="card" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

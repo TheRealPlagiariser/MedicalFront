@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Generate Range Report</h1>
+
+    <kendo-daterange>
+
+        <div mat-dialog-content>
+            <!-- CONTENT HERE -->
+            <label>
+                <span class="label">Start</span>
+                <br />
+                <kendo-dateinput
+                kendoDateRangeStartInput
+                kendoDateRangeStartInput
+                autoCorrectOn="change"
+                [(value)]="range.start"
+                class="mat-elevation-z4"
+                ></kendo-dateinput>
+            </label>
+        </div>
+        
+        <div mat-dialog-content>
+            <!-- CONTENT HERE -->
+            <label>
+                <span class="label">End</span>
+                <br />
+                <kendo-dateinput
+                kendoDateRangeEndInput
+                [(value)]="range.end"
+                class="mat-elevation-z4"
+                >
+                </kendo-dateinput>
+            </label>
+        </div>
+
+        <kendo-daterange-popup [animate]="{ type: 'fade' }">
+            <ng-template kendoDateRangePopupTemplate>
+            <kendo-multiviewcalendar kendoDateRangeSelection>
+            </kendo-multiviewcalendar>
+            </ng-template>
+        </kendo-daterange-popup>
+
+
+    </kendo-daterange>
+
+
+      <div mat-dialog-actions align="end">
+        <button mat-raised-button (click)="generate_csv()"style="background-color: #ce4f19; color: white; text-align: center;">
+            <b>Generate</b>
+          </button>
+        <button mat-raised-button (click)=closeDialog()>
+            Close
+        </button>
+      </div>

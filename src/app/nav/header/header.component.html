@@ -1,0 +1,133 @@
+<!-- ============================================================== -->
+<!-- Topbar header - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<header class="topbar">
+  <nav class="navbar top-navbar navbar-expand-md navbar-light shadow">
+    <div class="navbar-collapse">
+      <!-- ============================================================== -->
+      <!-- Logo -->
+      <!-- ============================================================== -->
+      <div class="navbar-header">
+        <a class="navbar-brand">
+          <!--End Logo icon -->
+          <!-- Logo text -->
+          <!-- dark Logo text -->
+          <img
+            src="assets/full-logo.png"
+            alt="homepage"
+            class="dark-logo"
+            width="130px"
+          />
+          <!-- Light Logo text -->
+        </a>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Logo -->
+      <!-- ============================================================== -->
+
+      <!-- ============================================================== -->
+      <!-- toggle and nav items -->
+      <!-- ============================================================== -->
+      <ul class="navbar-nav mr-auto">
+        <!-- This is  -->
+        <!-- <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+              <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+              <li class="nav-item hidden-sm-down"></li> -->
+      </ul>
+      <!-- ============================================================== -->
+      <!-- Profile -->
+      <!-- ============================================================== -->
+      <ul class="navbar-nav" style="margin-right: 15px;">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['claimForm']"
+            [routerLinkActive]="['active']"
+            >Make Claim
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['viewClaim']"
+            [routerLinkActive]="['active']"
+            >View Claim</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            data-toggle="modal"
+            data-target="#basicExample"
+            (click)="frame.show()"
+            mdbWavesEffect
+          >
+            Messenger
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" (click)="logout()">Logout </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div
+  mdbModal
+  #frame="mdbModal"
+  class="modal fade"
+  id="frameModalTop"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">Enter Pin</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="md-form" [formGroup]="LoginForm">
+          <mdb-icon fas icon="lock" class="prefix"></mdb-icon>
+          <input
+            type="password"
+            formControlName="pin"
+            maxlength="4"
+            style="width: 10% !important;"
+          />
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a
+          (click)="goMessenger(); frame.hide();"
+          mdbBtn
+          data-toggle="modal"
+          data-target="#basicExample"
+          color="danger"
+          class="waves-light"
+          mdbWavesEffect
+          >Login</a
+        >
+        <a
+          type="button"
+          mdbBtn
+          color="danger"
+          outline="true"
+          class="waves-light"
+          mdbWavesEffect
+          data-dismiss="modal"
+          (click)="frame.hide()"
+          >Cancel</a
+        >
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>

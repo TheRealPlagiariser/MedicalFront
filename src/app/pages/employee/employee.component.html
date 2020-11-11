@@ -1,0 +1,94 @@
+<div class="main">
+  <div class="container">
+    <div class="row" style="text-align: center;">
+      <div class="col-12">
+        <div>
+          <!-- <h2
+            style="
+              color: rgb(37, 33, 33);
+              text-align: center;
+              font-weight: 500;
+              padding-top: 5%;
+            "
+          >
+            Claim Form
+          </h2> -->
+        </div>
+        <div id="emp">
+          
+          <h1 *ngIf="isLoading"> <b> Loading...</b> </h1>
+
+          <br />
+
+          <br />
+          <form
+            [formGroup]="claimForm"
+            ngNativeValidate
+            (ngSubmit)="submitClaim()"
+          >
+            <h2
+              style="
+                color: rgb(37, 33, 33);
+                text-align: center;
+                font-weight: 500;
+                padding-top: 5%;
+              "
+            >
+              Claim Form
+            </h2>
+            <input
+              class="mat-elevation-z2"
+              type="text"
+              min="1"
+              placeholder="Employee ID"
+              required
+              formControlName="emp_id"
+            />
+
+            <input
+              class="mat-elevation-z2"
+              type="text"
+              placeholder="First Name"
+              required
+              formControlName="first_name"
+            />
+
+            <input
+              class="mat-elevation-z2"
+              type="text"
+              placeholder="Last Name"
+              required
+              formControlName="last_name"
+            />
+
+            <br />
+
+            <input
+              class="mat-elevation-z2"
+              type="number"
+              placeholder="  Number of Submission"
+              formControlName="number_of_claims"
+              min="1"
+              required
+            />
+            <br />
+
+            <br />
+
+            <button
+              mat-raised-button
+              class="text-primary"
+              type="submit"
+              style="margin-right: 2%;"
+            >
+              Submit
+            </button>
+            <a mat-raised-button class="text-danger" (click)="how()">
+              How to do?
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

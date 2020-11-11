@@ -1,0 +1,69 @@
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-md-12 col-sm-12" style="text-align: right; margin-bottom: 2%;">
+        <button mat-raised-button (click)="logout()">
+          Log Out
+        </button>
+      </div>
+      <div class="col-xl-6 col-md-6 col-sm-6" style="border-right: 2px solid #fff; text-align: center;">
+        <div class="col-xl-12 col-md-12 col-sm-12">
+          <button mat-raised-button style="background-color: slategray; color: white;" class="card c1"
+            (click)="makeClaims()">
+            Make Claims
+          </button>
+        </div>
+        <div class="col-xl-12 col-md-12 col-sm-12">
+          <button mat-raised-button style="background-color: orangered; color: white; margin-top: 10%;" class="card c2"
+            (click)="viewClaims()">
+            View Claims
+          </button>
+        </div>
+        <div class="col-xl-12 col-md-12 col-sm-12">
+          <button mat-raised-button style="background-color: orange; color: white; margin-top: 10%;" class="card c3"
+            data-toggle="modal" data-target="#basicExample" (click)="frame.show()" mdbWavesEffect>
+            Messenger
+          </button>
+        </div>
+      </div>
+      <div class="col-xl-6 col-md-6 col-sm-6">
+        <div class="logo">
+          <img src="..\assets\full-logo.png" class="logo" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal for pin-->
+
+<div mdbModal #frame="mdbModal" class="modal fade" id="frameModalTop" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">Enter Pin </p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="md-form" [formGroup]="LoginForm">
+          <mdb-icon fas icon="lock" class="prefix"></mdb-icon>
+          <input type="password" formControlName="pin" maxlength="4" style="  width: 10%!important;">
+
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a (click)="goMessenger()" mdbBtn color="danger" class="waves-light" mdbWavesEffect>Login</a>
+        <a type="button" mdbBtn color="danger" outline="true" class="waves-light" mdbWavesEffect data-dismiss="modal"
+          (click)="frame.hide()">Cancel</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>

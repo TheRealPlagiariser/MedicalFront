@@ -1,0 +1,103 @@
+div.main {
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #cac9c9c7 1%,
+    #ffffff 100%
+  ); /* Chrome10+,Safari5.1+ */
+  height: calc(100vh);
+  width: 100%;
+}
+::deep input {
+  border: none;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  padding: 0;
+  -webkit-appearance: none;
+}
+
+#emp form {
+  width: 90%;
+}
+#emp,
+.logo {
+  display: inline-block;
+  margin-top: 5%;
+}
+#emp {
+  padding: 0px 12px;
+}
+.logo {
+  color: #fff;
+  font-size: 50px;
+  line-height: 125px;
+  width: 300px;
+}
+
+#emp form input {
+  height: 50px;
+}
+
+#emp form input[type="text"],
+input[type="password"] {
+  background-color: #000;
+  border-radius: 0px 3px 3px 0px;
+  color: #000;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.error-block {
+  color: red;
+}
+
+.reasonOverflow {
+  white-space: nowrap !important;
+  overflow: auto !important;
+  max-width: 25px !important;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(241, 111, 111);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff8787;
+}
+
+::-webkit-scrollbar {
+  width: 1px !important;
+}
+
+.mat-elevation-z8{
+  margin-left: 55px;
+  width: 91%;
+  justify-content: center;
+}
+
+table { 
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 15%;
+  padding: 15%;
+  text-align: center !important;
+}
+::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+}
+.label {
+  display: block;
+  font-weight: bold;
+  text-indent: 8px;
+  color: #656565;
+}

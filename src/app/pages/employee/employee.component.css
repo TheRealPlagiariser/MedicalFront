@@ -1,0 +1,75 @@
+div.main {
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #cac9c9c7 1%,
+    #ffffff 100%
+  ); /* Chrome10+,Safari5.1+ */
+  height: calc(86vh);
+  width: 100%;
+}
+
+input {
+  border: none;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  padding: 0;
+  -webkit-appearance: none;
+}
+
+#emp,
+.logo {
+  display: inline-block;
+}
+#emp {
+  padding: 0px 12px;
+  text-align: center;
+}
+.logo {
+  color: #fff;
+  font-size: 50px;
+  line-height: 125px;
+  width: 300px;
+  position: relative;
+  animation: mysecond 10s;
+  animation-direction: alternate;
+}
+
+#emp form input {
+  height: 50px;
+}
+
+#emp form input[type="text"],
+input[type="number"] {
+  background-color: #fff;
+  border-radius: 0px 3px 3px 0px;
+  color: #000;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 56%;
+}
+
+.error-block {
+  color: red;
+}
+@keyframes myfirst {
+  0% {
+    left: 600px;
+    top: 0px;
+  }
+  25% {
+    left: 0px;
+    top: 0px;
+  }
+}
+@keyframes mysecond {
+  0% {
+    right: 600px;
+    top: 0px;
+  }
+  25% {
+    right: 0px;
+    top: 0px;
+  }
+}

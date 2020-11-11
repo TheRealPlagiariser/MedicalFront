@@ -1,0 +1,8 @@
+@media (max-width: 767px) {
+.topbar{text-align: center;}
+.dark-logo {
+    width: 90px;
+    align-items: center;
+    text-align: center;
+}
+}

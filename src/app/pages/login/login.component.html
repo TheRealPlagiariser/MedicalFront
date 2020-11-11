@@ -1,0 +1,42 @@
+
+<div class="main">
+  <div class="container" style="text-align: center;">
+    <div class="row">
+      <div
+        class="col-xl-6 col-md-6 col-sm-6"
+        style="border-right: 2px solid #fff;"
+      >
+        <div class="logo">
+          <img src="..\assets\full-logo.png" class="logo" />
+        </div>
+      </div>
+      <div class="col-xl-6 col-md-6 col-sm-6">
+        <div *ngIf="_loading">
+          <mat-spinner></mat-spinner>
+        
+         </div>
+        <div *ngIf="!_loading"  id="login">
+          <form
+            [formGroup]="LoginForm"
+            ngNativeValidate
+            (ngSubmit)="loginUser()"
+          >
+            <input
+              class="mat-elevation-z2"
+              type="password"
+              min="1"
+              Placeholder="Enter Pin"
+              formControlName="password"
+              required
+            />
+            <button mat-raised-button class="card" type="submit">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12" style="text-align: center; margin-top: 2%;"></div>
+  </div>
+</div>
